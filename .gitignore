@@ -6,7 +6,6 @@ __pycache__/
 # Virtual environments
 .venv/
 .env/*
-outputs/*
 .DS_Store
 
 # Distribution / packaging
@@ -20,3 +19,8 @@ dist/
 .idea/
 *.swp
 *egg-info/
+
+# Folders and files to ignore
+outputs/*
+input_data/*
+data/

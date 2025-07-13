@@ -10,9 +10,9 @@ load_dotenv(dotenv_path=env_path)
 API_KEY = os.getenv("ENEKTAR")
 API_SECRET = os.getenv("COGZIL")
 
-TRADING_SYMBOL = "BTCUSDT"
-TIMEFRAME = "1h"
-TESTNET = True  # set to False if using live environment
+TRADING_SYMBOL = "ETHUSDT"
+TIMEFRAME = "1m"
+TESTNET = False  # set to False if using live environment
 
 # Basic strategy parameters (example)
 SHORT_WINDOW = 10
