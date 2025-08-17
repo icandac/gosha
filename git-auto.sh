@@ -5,7 +5,7 @@ set -euo pipefail
 echo "🧪 Running pre-commit hooks…"
 if ! pre-commit run --all-files; then
   echo
-  echo "✋ pre-commit found issues. Please fix them before committing."
+  echo "pre-commit found issues. Please fix them before committing."
   exit 1
 fi
 
@@ -15,14 +15,14 @@ echo "📂 Here are your modified/untracked files:"
 git status --short
 
 echo
-read -p "Which files would you like to stage? (e.g. file1.py file2.txt): " files
+read -p "Which files would you like to stage? (e.g. file1.py file2.txt, or . for all files): " files
 if [[ -z "${files// /}" ]]; then
   echo "No files provided—aborting."
   exit 1
 fi
 
 git add $files
-echo "✅ Staged: $files"
+echo "Staged: $files"
 
 # 3) Ask for a commit message
 echo
@@ -33,11 +33,11 @@ if [[ -z "${msg// /}" ]]; then
 fi
 
 git commit -m "$msg"
-echo "✅ Committed."
+echo "Committed."
 
 # 4) Push to the current branch
 current_branch=$(git rev-parse --abbrev-ref HEAD)
 echo
-echo "📤 Pushing to origin/$current_branch..."
+echo "Pushing to origin/$current_branch..."
 git push origin "$current_branch"
-echo "🎉 Done!"
+echo "Done!"
